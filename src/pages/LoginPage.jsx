@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import useAuth from '../hooks/useAuth'
+import './Styles/LoginPage.css'
 
 
 
@@ -35,17 +36,18 @@ const LoginPage = () => {
  
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(submit)}>
-        <label>
-          <span>Email</span>
-          <input {...register('email')} type="email" />
+    <div className='loginPage'>
+      <form className='loginPage__form' onSubmit={handleSubmit(submit)}>
+      <h3 className='loginPage__title'>Login</h3>
+        <label className='loginPage__label'>
+          <span className='loginPage__subtitle'>Email</span>
+          <input className='loginPage__input' {...register('email')} type="email" />
         </label>
-        <label>
-          <span>Password</span>
-          <input {...register('password')} type="password" />
+        <label className='loginPage__label'>
+          <span className='loginPage__subtitle'>Password</span>
+          <input className='loginPage__input' {...register('password')} type="password" />
         </label>
-        <button>submit</button>
+        <button className='loginPage__button'>Enter</button>
       </form>
     </div>
   )

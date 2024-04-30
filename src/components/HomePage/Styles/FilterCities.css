@@ -1,0 +1,38 @@
+
+.filterCities__title {
+    padding-top: .7em;
+    padding-bottom: .4em;
+    font-size: 1.4em;
+}
+
+.filterCities__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.filterCities__item {
+    width: 120px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    /* margin-left: 1rem; */
+    /* background-color: #0002; */
+    /* text-align: center; */
+
+    cursor: pointer;
+    /* background-color: blue; */
+    /* padding-left: 1rem;
+    padding-bottom: .3rem; */
+    font-size: 1em;
+    padding: 10px;
+    user-select: none;
+
+}
+
+.filterCities__item:hover {
+    width: 120px;
+    height: 30px;
+    background-color: #0003;
+    border-radius: 4px 4px 4px 4px;
+    /* color: #000; */
+}

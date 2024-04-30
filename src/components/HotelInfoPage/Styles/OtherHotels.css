@@ -1,0 +1,21 @@
+.otherHotels {
+    display: flex;
+    justify-content: center;
+}
+.otherHotels__title {
+    margin-top: 1rem;
+}
+.otherHotels__container {
+    max-width: 1400px;
+    width: 100%;
+    /* background-color: red; */
+    margin-bottom: 2.5rem;
+}
+.otherHotels__containerCard {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2.5em 2em;
+        width: 100%;
+        padding-top: 50px;
+}

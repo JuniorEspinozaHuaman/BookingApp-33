@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import './style/HotelCard.css'
+import './Styles/HotelCard.css'
 
 const HotelCard = ({ hotel }) => {
 

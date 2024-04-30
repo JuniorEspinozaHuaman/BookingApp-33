@@ -1,0 +1,58 @@
+.hotelInfoPage {
+    padding-top: 140px;
+}
+
+.hotelInfoPage__header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.hotelInfoPage__title {
+    display: block;
+    margin-bottom: .7rem;
+}
+
+.hotelInfoPage__rating {
+    display: block;
+    padding-bottom: .5rem;
+}
+.hotelInfoPage__containerSliderMap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.hotelInfoPage__map {
+    max-width: 600px;
+    width: 95%;
+}
+
+.hotelInfoPage__containerInformation{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    gap: .6rem;
+}
+
+.hotelInfoPage__data {
+    max-width: 1400px;
+    width: 95%;
+}
+.hotelInfoPage__cityName{
+
+}
+.hotelInfoPage__countryName{
+
+}
+.hotelInfoPage__icon{
+    color: red;
+    margin-right: .4rem;
+}
+.hotelInfoPage__description{
+    font-size: .9rem;
+    line-height: 1.6rem;
+}
+

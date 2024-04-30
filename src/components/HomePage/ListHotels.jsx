@@ -1,5 +1,5 @@
 import HotelCard from './HotelCard'
-import './style/ListHotels.css'
+import './Styles/ListHotels.css'
 
 const ListHotels = ({hotels}) => {
 

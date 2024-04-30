@@ -56,14 +56,15 @@
     border: none;
     padding: 0.3em 0;
     width: 7em;
-    background-color: #fa4006 ;
+    background-color: #f72c2ce5 ;
     color: white;
     border-radius: 0.5em;
-    transition: transform 100ms ease, 
-                box-shadow 100ms ease;
+    transition: transform 200ms ease, 
+                box-shadow 200ms ease;
 }
 
 .card__btn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 0.5em #0005;
+    background-color: red;
 }

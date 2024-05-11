@@ -18,7 +18,7 @@
     position: sticky;
     top: 150px;
 }
-.filterxd {
+.HomePage__handleFilter {
     display: none;
 }
 @media only screen and (max-width: 932px) {

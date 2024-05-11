@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import useAuth from '../hooks/useAuth'
 import './Styles/LoginPage.css'
@@ -7,38 +7,35 @@ import './Styles/LoginPage.css'
 
 const LoginPage = () => {
 
-  const {handleSubmit, reset, register} = useForm()
+  // const [prueba, setPrueba] = useState(tokens)
 
-  const { loginUser } = useAuth()
+  const { handleSubmit, reset, register } = useForm()
+
+  const { loginUser, setIsLoggedIn, setIsLoginOpen, isLoginOpen } = useAuth()
 
   const submit = data => {
     loginUser(data)
     reset({
       email: '',
-      password:''
+      password: ''
     })
+    // setIsLoggedIn(localStorage.getItem('token'))
+    // localStorage.getItem('token')? setisLoginOpen(false): setisLoginOpen(true)
   }
-
-  const handleLogout = () => {
-    localStorage.removeItem('token')
-    localStorage.removeItem('user')
+  
+  const handlePrueba = () => {
+    // localStorage.getItem('token')? setIsLoggedIn(true): setIsLoggedIn(true)
+    
   }
-
-  if(localStorage.getItem('token')){
-    const { firstName, lastName, email } = JSON.parse(localStorage.getItem('user'))
-    return (
-      <div>
-        <h2>Welcome {firstName + ' ' + lastName}</h2>
-        <button onClick={handleLogout}>Logout</button>
-      </div>
-    )
-  }
- 
+  useEffect(() => {
+    setIsLoginOpen(localStorage.getItem('token'))
+  },[loginUser])
 
   return (
     <div className='loginPage'>
+
       <form className='loginPage__form' onSubmit={handleSubmit(submit)}>
-      <h3 className='loginPage__title'>Login</h3>
+        <h3 className='loginPage__title'>Login</h3>
         <label className='loginPage__label'>
           <span className='loginPage__subtitle'>Email</span>
           <input className='loginPage__input' {...register('email')} type="email" />
@@ -47,7 +44,7 @@ const LoginPage = () => {
           <span className='loginPage__subtitle'>Password</span>
           <input className='loginPage__input' {...register('password')} type="password" />
         </label>
-        <button className='loginPage__button'>Enter</button>
+        <button className='loginPage__button' onClick={handlePrueba}>Enter</button>
       </form>
     </div>
   )

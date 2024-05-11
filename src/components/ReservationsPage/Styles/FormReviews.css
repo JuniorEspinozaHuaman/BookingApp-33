@@ -8,7 +8,7 @@
     align-items: center;
     top: 0;
     z-index: 3;
-    transition: .5s ease-in;
+    transition: .3s ease-in;
 }
 
 .formReviews--close {
@@ -86,6 +86,7 @@
     border-radius: 4px;
     outline: none;
     border: 1px solid #0003;
+    font-size: 1rem;
 }
 
 .formReviews__button {

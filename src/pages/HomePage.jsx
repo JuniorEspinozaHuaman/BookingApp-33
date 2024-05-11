@@ -6,7 +6,7 @@ import FilterName from '../components/HomePage/FilterName'
 import FilterPrice from '../components/HomePage/FilterPrice'
 import FilterCities from '../components/HomePage/FilterCities'
 import './Styles/HomePage.css'
-import LoginPage from './LoginPage'
+
 
 const HomePage = () => {
 
@@ -15,7 +15,7 @@ const HomePage = () => {
     from: 0,
     to: Infinity
   })
-
+  const [isOpenFilter, setIsOpenFilter] = useState(true)
 
 
   const hotels = useSelector(states => states.hotels)
@@ -37,17 +37,21 @@ const HomePage = () => {
 
     return filterName && filterPrice
   })
+  const handleFilter = () => {
+    setIsOpenFilter(!isOpenFilter)
+  }
 
   return (
     <div className='HomePage'>
-        <div className='HomePage__containerFilter'>
-          <div className='HomePage__containerSticky'>
+      <div className='HomePage__handleFilter' onClick={handleFilter}><i class='bx bx-slider-alt'></i></div>
+      <div className={`HomePage__containerFilter ${isOpenFilter && 'HomePage__containerFilter--OpenClose'}`}>
+        <div className='HomePage__containerSticky '>
           <FilterName setNameInput={setNameInput} />
           <FilterPrice setFromTo={setFromTo} />
           <FilterCities />
-          </div>
         </div>
-        <ListHotels hotels={hotelsFiltered} />
+      </div>
+      <ListHotels hotels={hotelsFiltered} />
     </div>
   )
 }

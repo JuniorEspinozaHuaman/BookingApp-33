@@ -27,7 +27,7 @@
     max-width: 1400px;
     width: 95%;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     /* background-color: red; */
     gap: .5rem;
 }
@@ -69,4 +69,8 @@
 .commentsSection__comment{
     font-size: .9rem;
     line-height: 18px;
+}
+.commentsSection__button {
+    cursor: pointer;
+    margin-top: 1rem;
 }

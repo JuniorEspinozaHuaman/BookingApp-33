@@ -6,10 +6,12 @@
     align-items: center;
     padding: 0 3rem 0 3rem;  
     color: white;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.158);
-    position: fixed;
+    box-shadow: 2px 2px 16px #0006;
+    position: sticky;
     background-color: white;
     z-index: 2;
+    margin-bottom: 40px;
+    top: 0;
 }
 
 .header__title {
@@ -27,6 +29,7 @@
 .header__link {
     text-decoration-line: none;
     color: red;
+    cursor: pointer;
 }
 .header__link--color {
     background-color: rgba(247, 44, 44, 0.897);
@@ -46,3 +49,21 @@
 .header__link--underlined:hover {
     text-decoration-line: underline;
 }
+
+@media only screen and (max-width: 430px) {
+    .header__title {
+        font-size: 25px;
+    }
+
+    .header {
+        padding: 0 1rem 0 1rem;
+    }
+
+    .header__link--color {
+        padding: .7rem 1rem .7rem 1rem ; 
+    }
+    .header__list {
+        gap: .7em;
+    }
+  }
+  

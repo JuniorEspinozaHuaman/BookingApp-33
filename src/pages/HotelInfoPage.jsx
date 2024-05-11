@@ -8,7 +8,8 @@ import SliderImgs from '../components/HotelInfoPage/SliderImgs'
 import CommentsSection from '../components/HotelInfoPage/CommentsSection'
 import './Styles/HotelInfoPage.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons' 
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import LoginPage from './LoginPage'
 
 
 const HotelInfoPage = () => {
@@ -20,9 +21,8 @@ const HotelInfoPage = () => {
 
     useEffect(() => {
         getHotel()
+
     }, [url])
-
-
 
     return (
         <div className='hotelInfoPage'>
@@ -58,20 +58,22 @@ const HotelInfoPage = () => {
                 </div>
                 <div className='hotelInfoPage__data'>
 
-                    <FontAwesomeIcon icon={faLocationDot} className='hotelInfoPage__icon'/>
+                    <FontAwesomeIcon icon={faLocationDot} className='hotelInfoPage__icon' />
                     <span className='hotelInfoPage__address'>{hotel?.address}</span>
                 </div>
                 <div className='hotelInfoPage__data'>
                     <p className='hotelInfoPage__description'>{hotel?.description}</p>
                 </div>
             </div>
-            
+
             <CommentsSection
                 hotelId={hotel?.id}
             />
             <ReservationsHotel
                 hotelId={hotel?.id}
             />
+            
+
             <OtherHotels
                 cityId={hotel?.city.id}
                 hotelId={hotel?.id}

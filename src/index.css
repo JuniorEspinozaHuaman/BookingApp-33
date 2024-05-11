@@ -39,3 +39,34 @@ input, button {
 button {
     cursor: pointer;
 }
+/* eliminar */
+/* html{
+    background-color: #1a1d23;
+}
+.header {
+    background-color: #1a1d23;
+    box-shadow: 2px 2px 10px #0009;
+}
+.header__app {
+    color: white;
+}
+.filterName__button {
+    background-color: red;
+}
+.card__body {
+    color: #fff9;
+}
+.card{
+    box-shadow: 2px 2px 12px #0009;
+}
+.filterName__input {
+    background-color: transparent;
+    border: 1px solid #000;
+}
+.filterPrice__input {
+    background-color: transparent;
+    border: 1px solid #000;
+}
+.HomePage__containerFilter {
+    color: #fff9;
+} */

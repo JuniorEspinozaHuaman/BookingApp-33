@@ -2,29 +2,39 @@ import { Link } from "react-router-dom"
 import './Styles/HeaderShared.css'
 import useAuth from "../../hooks/useAuth"
 import { useEffect } from "react"
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const HeaderShared = () => {
-  const { isLoggedIn, setIsLoggedIn, loginUser} = useAuth()
+  const { isLoggedIn, setIsLoggedIn, loginUser } = useAuth()
 
   const handleLogout = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
     setIsLoggedIn(false)
   }
-  
+
   const handleLoginRedirect = () => {
     localStorage.setItem('returnUrl', JSON.stringify({ pathname: window.location.pathname, hash: window.location.hash.substring(2) }));
   }
-  
+
   useEffect(() => {
     setIsLoggedIn(localStorage.getItem('token'))
-  },[loginUser])
-  
+  }, [loginUser])
+
   return (
     <header className="header">
+
       <h1 className="header__title"><Link className="header__link" to='/' target="_self">Booking<span className="header__app">App</span></Link></h1>
       <nav className="header__nav">
+        <ToastContainer
+          limit={1}
+          autoClose={1500}
+          pauseOnHover={false}
+          pauseOnFocusLoss={false}
+          closeOnClick
+        />
         <ul className="header__list">
           {
             isLoggedIn && (

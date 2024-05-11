@@ -9,7 +9,6 @@ import CommentsSection from '../components/HotelInfoPage/CommentsSection'
 import './Styles/HotelInfoPage.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons'
-import LoginPage from './LoginPage'
 
 
 const HotelInfoPage = () => {
@@ -24,10 +23,12 @@ const HotelInfoPage = () => {
 
     }, [url])
 
+
     return (
         <div className='hotelInfoPage'>
             <header className='hotelInfoPage__header'>
                 <h2 className='hotelInfoPage__title'>{hotel?.name}</h2>
+                
                 <span className='hotelInfoPage__rating'>rating</span>
             </header>
             <div className='hotelInfoPage__containerSliderMap'>

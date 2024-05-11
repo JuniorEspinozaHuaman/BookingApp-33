@@ -1,9 +1,7 @@
 import axios from 'axios'
-import {  useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-
-
-
+import { toast } from 'react-toastify'
 
 const useAuth = () => {
   const navigate = useNavigate()
@@ -43,24 +41,25 @@ const useAuth = () => {
         localStorage.setItem('user', JSON.stringify(res.data.user))
         localStorage.removeItem('returnUrl')
 
-        // setIsLoggedIn(true)
-        // setIsLoginOpen(false)
-        
         if (returnUrl) {
           const { pathname, hash } = JSON.parse(returnUrl)
           navigate(`${pathname}${hash}`)
           setIsLoginOpen(!!token)
-          
-        } 
-        // else {
-        //   const { pathname, hash } = JSON.parse(returnUrl)
-        //   navigate(`${pathname}${hash}`)
-        //   setIsLoggedIn(!!token)
-          
-        // }
+        }
         
+        toast.success('Successful login', {
+          theme: 'dark'
+        })
+
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.log(err)
+        toast.error(`${err.response.data.message}`, {
+          theme: 'dark'
+
+        })
+        console.log(err.response.data.message);
+      })
   }
 
 

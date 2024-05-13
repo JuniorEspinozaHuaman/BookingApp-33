@@ -27,8 +27,17 @@ const useAuth = () => {
       .then(res => {
         console.log(res.data)
         navigate('/login')
+        toast.success('successful registration', {
+          theme: 'dark'
+        })
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.log(err)
+        toast.error(`${err.response.data.message}`, {
+          theme: 'dark'
+
+        })
+      })
   }
 
   //Login

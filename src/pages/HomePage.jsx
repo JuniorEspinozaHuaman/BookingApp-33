@@ -37,13 +37,14 @@ const HomePage = () => {
 
     return filterName && filterPrice
   })
+  
   const handleFilter = () => {
     setIsOpenFilter(!isOpenFilter)
   }
 
   return (
     <div className='HomePage'>
-      <div className='HomePage__handleFilter' onClick={handleFilter}><i class='bx bx-slider-alt'></i></div>
+      <div className='HomePage__handleFilter' onClick={handleFilter}><i className='bx bx-slider-alt'></i></div>
       <div className={`HomePage__containerFilter ${isOpenFilter && 'HomePage__containerFilter--OpenClose'}`}>
         <div className='HomePage__containerSticky '>
           <FilterName setNameInput={setNameInput} />
@@ -51,7 +52,9 @@ const HomePage = () => {
           <FilterCities />
         </div>
       </div>
-      <ListHotels hotels={hotelsFiltered} />
+      <ListHotels 
+      hotels={hotelsFiltered} 
+      />
     </div>
   )
 }
